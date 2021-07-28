@@ -1,14 +1,18 @@
+<<<<<<< HEAD
 <?php     
 
 session_start();
 
 ?>
 
+=======
+>>>>>>> cc215af324de6e19782e944ba9937b19702b8285
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
     <title>Registration</title>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -36,6 +40,24 @@ session_start();
                      VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
                      echo $query;
         $result   = mysqli_query($conn, $query);
+=======
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<?php
+    require('db.php');
+    if (isset($_REQUEST['username'])) {
+        $username = stripslashes($_REQUEST['username']);
+        $username = mysqli_real_escape_string($con, $username);
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        $create_datetime = date("Y-m-d H:i:s");
+        $query    = "INSERT into `users` (username, password, email, create_datetime)
+                     VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
+        $result   = mysqli_query($con, $query);
+>>>>>>> cc215af324de6e19782e944ba9937b19702b8285
         if ($result) {
             echo "<div class='form'>
                   <h3>You are registered successfully.</h3><br/>
@@ -44,9 +66,16 @@ session_start();
         } else {
             echo "<div class='form'>
                   <h3>Required fields are missing.</h3><br/>
+<<<<<<< HEAD
                   </div>";
         }
     }
+=======
+                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+                  </div>";
+        }
+    } else {
+>>>>>>> cc215af324de6e19782e944ba9937b19702b8285
 ?>
     <form class="form" action="" method="post">
         <h1 class="login-title">Registration</h1>
@@ -56,5 +85,11 @@ session_start();
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link">Already have an account? <a href="login.php">Login here</a></p>
     </form>
+<<<<<<< HEAD
+=======
+<?php
+    }
+?>
+>>>>>>> cc215af324de6e19782e944ba9937b19702b8285
 </body>
 </html>

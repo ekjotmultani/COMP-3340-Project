@@ -6,6 +6,7 @@ include("auth_session.php");
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Client area</title>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -31,6 +32,12 @@ include("auth_session.php");
     
     <div class="form">
 
+=======
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="form">
+>>>>>>> cc215af324de6e19782e944ba9937b19702b8285
         <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
         <p>You are in user dashboard page.</p>
         <p><a href="logout.php">Logout</a></p>
