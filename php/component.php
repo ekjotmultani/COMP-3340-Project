@@ -1,25 +1,27 @@
 <?php
 
-function component($productname, $productprice, $productimg, $productid, $productdesc){
+function component($picname, $picprice, $imgfile, $imgid, $picdesc){
     $element = "
     
     <div class=\"col-md-3 col-sm-6 my-3 my-md-0\">
                 <form action=\"index.php\" method=\"post\">
                     <div class=\"card shadow\">
+                        <a href = \"productpage.php?id=$imgid\">
                         <div>
-                            <img src=\"$productimg\" alt=\"Image1\" class=\"img-fluid card-img-top\">
+                            <img src=\"$imgfile\" alt=\"img/default\" class=\"img-fluid card-img-top\">
                         </div>
+                        </a>
                         <div class=\"card-body\">
-                            <h5 class=\"card-title\">$productname</h5>
+                            <h5 class=\"card-title\">$picname</h5>
             
-                            <p class=\"card-text\">$productdesc</p>
+                            <p class=\"card-text\">$picdesc</p>
 
                             <h5>
-                                <span class=\"price\">$$productprice</span>
+                                <span class=\"price\">$$picprice</span>
                             </h5>
 
-                            <button type=\"submit\" class=\"btn btn-warning my-3\" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
-                             <input type='hidden' name='product_id' value='$productid'>
+                            <button type=\"submit\" class=\"btn btn-secondary my-3\" name=\"add\">Add to Cart <i class=\"fas fa-shopping-cart\"></i></button>
+                             <input type='hidden' name='product_id' value='$imgid'>
                         </div>
                     </div>
                 </form>
@@ -28,18 +30,18 @@ function component($productname, $productprice, $productimg, $productid, $produc
     echo $element;
 }
 
-function cartElement($productimg, $productname, $productprice, $productid, $productdesc){
+function cartElement($imgfile, $picname, $picprice, $imgid, $picdesc){
     $element = "
     
-    <form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
+    <form action=\"cart.php?action=remove&id=$imgid\" method=\"post\" class=\"cart-items\">
                     <div class=\"border rounded\">
                         <div class=\"row bg-white\">
                             <div class=\"col-md-3 pl-0\">
-                                <img src=$productimg alt=\"Image1\" class=\"img-fluid\">
+                                <img src=$imgfile alt=\"Image1\" class=\"img-fluid\">
                             </div>
                             <div class=\"col-md-6\">
-                                <h5 class=\"pt-2\">$productname</h5>
-                                <h5 class=\"pt-2\">$$productprice</h5>
+                                <h5 class=\"pt-2\">$picname</h5>
+                                <h5 class=\"pt-2\">$$picprice</h5>
 
                                 <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove\">Remove</button>
                             </div>

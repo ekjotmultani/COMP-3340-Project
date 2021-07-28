@@ -7,7 +7,7 @@ require_once ('./php/component.php');
 
 
 // create instance of Createdb class
-$database = new CreateDb("Productdb", "Producttb");
+$database = new CreateDb("nealj_Team15", "art_db");
 
 if (isset($_POST['add'])){
     /// print_r($_POST['product_id']);
@@ -17,6 +17,7 @@ if (isset($_POST['add'])){
 
         if(in_array($_POST['product_id'], $item_array_id)){
             echo "<script>window.location = 'index.php'</script>";
+            // maybe add a message about being able to buy only one piece at a time due to supply
         }else{
 
             $count = count($_SESSION['cart']);
@@ -59,6 +60,7 @@ if (isset($_POST['add'])){
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
@@ -66,9 +68,10 @@ if (isset($_POST['add'])){
 <div class="container">
         <div class="row text-center py-5">
             <?php
+
                 $result = $database->getData();
                 while ($row = mysqli_fetch_assoc($result)){
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id'], $row['product_description']);
+                    component($row['pic_name'], $row['pic_price'], $row['file_location'], $row['img_id'], $row['pic_descrip']);
                 }
             ?>
         </div>

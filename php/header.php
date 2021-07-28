@@ -1,9 +1,9 @@
 
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="index.php" class="navbar-brand">
+        <a href="\shopping/index.php" class="navbar-brand">
             <h3 class="px-5">
-                <i class="fas fa-shopping-basket"></i> Extremely Modern Art
+                Extremely Modern Art.
             </h3>
         </a>
         <button class="navbar-toggler"
@@ -20,7 +20,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="mr-auto"></div>
             <div class="navbar-nav">
-                <a href="cart.php" class="nav-item nav-link active">
+                
+                <a href="\shopping/cart.php" class="nav-item nav-link active">
                     <h5 class="px-5 cart">
                         <i class="fas fa-shopping-cart"></i> Cart
                         <?php
@@ -34,6 +35,10 @@
 
                         ?>
                     </h5>
+                </a>
+
+                <a href="\shopping/login/index.php" class="nav-item nav-link active">
+                    <h5>Log In</h5>
                 </a>
             </div>
         </div>
