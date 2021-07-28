@@ -1,0 +1,379 @@
+/* 3340 Group Project Team 15 */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Ariel, Times New Roman;
+}
+
+body
+{
+	min-height: 100%;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+li
+{
+	list-style: none;
+} 
+
+h1, h2
+{
+	color: #023020;
+}
+
+h3, h4
+{
+	color: #023020;
+}
+
+/* Make the buttons colourful which have inverted colours on hover */
+
+.btn
+{
+	background: #AFE1AF;
+	color: #023020;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.btn:hover
+{
+	color: #AFE1AF;
+	background: #023020;
+	padding: 3px 8px;
+	border: 2px solid #023020;
+}
+
+.title
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 15px 10px;
+	border-bottom: 2px solid #AFE1AF;
+}
+
+table
+{
+	padding: 10px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+th, td
+{
+	text-align: left;
+	padding: 8px;
+	overflow-wrap: break-word;
+}
+
+/* Format the side bar */
+
+.side-menu
+{
+	position: fixed;
+	background: #AFE1AF;
+	width: 20%;
+	min-height: 90%;
+	display: flex;
+	flex-direction: column;
+}
+
+.side-menu .brand-name
+{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.side-menu li
+{
+	font-size: 24px;
+	padding: 20px 20px 10px 20px;
+	display: flex;
+	align-items: center;
+}
+
+.side-menu li:hover
+{
+	background: #023020;
+	color: #AFE1AF;
+}
+
+.container
+{
+	position: absolute;
+	right: 0;
+	width: 80%;
+	height: 100%;
+}
+
+/* Format header including search bar and "Add New" user button */
+
+.container .header
+{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 80%;
+	height: 10%;
+	background: #AFE1AF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+.container .header .nav
+{
+	width: 90%;
+	display: flex;
+	align-items: center;
+}
+
+.container .header .nav .search
+{
+	flex: 3;
+	background: white;	
+	display: flex;
+	justify-content: center;
+}
+
+.container .header .nav .search input[type=text]
+{
+	border: none;
+	background: rgb(175, 225, 175, 40%);
+	padding: 10px;
+	width: 50%;
+}
+
+.container .header .nav .search button
+{
+	width: 40px;
+	height: 40px;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container .header .nav .search button img
+{
+	width: 30px;
+	height: 30px;
+}
+
+  .container .header .nav .user
+{
+	flex: 1;
+	background: white;	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container .header .nav .user img
+{
+	width: 40px;
+	height: 40px;
+}
+
+.contiainer .header .nav .user .img-case
+{
+	position: relative;
+	width: 50px;
+	height: 50px;
+}
+
+.container .header .nav .user .img-case img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Format "cards" that display the most important information in clear, colourful blocks */
+
+.container .content
+{
+	position: relative;
+	margin-top: 10%;
+	min-height: 90%;
+}
+
+.container .content .cards
+{
+	padding: 20px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.container .content .cards .card
+{
+	width: 250px;
+	height: 150px;
+	text-align: center;
+	background: linear-gradient(to right, #ccff99 10%, #AFE7AF 80%);
+	margin: 20px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .content .cards .card .icon-case
+{}
+
+/* Format tables that display important and most recent information, with a "View All" button for more information */
+
+.container .content .content-2
+{
+	min-height: 60%;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+/* Most recent purchases */
+
+.container .content .content-2 .recent-payments
+{
+	max-width: 70%;
+	background: white;
+	margin: 0 25px 25px 25px;
+	display: flex;
+	flex-wrap: wrap;	
+	transition: 0.5s;
+	flex-direction: column;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* New Items recently added to catalogue */
+
+.container .content .content-2 .new-items
+{
+	background: white;
+	max-width: 50%;
+	margin: 0 25px 25px 25px;
+	display: flex;
+	flex-wrap: wrap;
+	transition: 0.5s;
+	flex-direction: column;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The following changes the display depending on the size */
+
+/* Shrinks font size on side bar */
+
+@media screen and (max-width: 1050px)
+{
+	.side-menu li
+	{
+		font-size: 18px;
+	}
+}
+
+/* Shrinks font size more on side bar */
+
+@media screen and (max-width: 940px)
+{
+	.side-menu li
+	{
+		font-size: 12px;
+	}
+}
+
+/* Removes font on side bar; removes "E-mail" and "Artist" columns in tables; 
+removes "View All" button in tables; shrinks font size in tables */
+
+@media screen and (max-width:750px)
+{	
+	.side-menu li span
+	{
+		display: none;
+	}
+
+	.container .content .content-2 .recent-payments table th:nth-child(2),
+	.container .content .content-2 .recent-payments table td:nth-child(2)
+	{
+		display: none;
+	}
+	
+	.container .content .content-2 .new-items table th:nth-child(2),
+	.container .content .content-2 .new-items table td:nth-child(2)
+	{
+		display: none;
+	}
+	
+	.container .content .content-2 .recent-payments h2
+	{
+		font-size: 16px;
+	}
+		
+	.container .content .content-2 .recent-payments .btn
+	{
+		display: none;
+	}
+	
+	.container .content .content-2 .new-items h2
+	{
+		font-size: 16px;
+	}
+		
+	.container .content .content-2 .new-items .btn 
+	{
+		display: none;
+	}
+	
+}
+
+/* Shrinks brand name in side bar; changes font size in cards; removes icon in cards */
+
+@media screen and (max-width:560px)
+{
+	.brand-name h1
+	{
+		font-size: 22px;
+	}
+	
+	.container .content .cards
+	{
+		justify-content: center;
+	}
+	
+	.container .content .cards .card .box h2
+	{
+		font-size: 20px;
+	}
+	
+	.container .content .cards .card .box h3
+	{
+		font-size: 16px;
+	}
+	
+	.container .content .cards .card .icon-case
+	{
+		display: none;
+	}
+	
+
+}
+
+
+
+
+
