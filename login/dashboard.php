@@ -27,14 +27,30 @@ include("auth_session.php");
     require('db.php');
     require_once ("../php/header.php");
 
-    
-    ?>
-    
-    <div class="form">
+    $username = $_SESSION['username'];
+    $query = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $email = $row['email'];
+    $createtime = $row['create_datetime'];
 
-        <p>Hey, <?php echo $_SESSION['username']; ?>!</p>
-        <p>You are in user dashboard page.</p>
-        <p><a href="logout.php">Logout</a></p>
-    </div>
+    $info = "
+
+        <div class=\"container text-center\">
+            
+            <h1 class = \"display-1\">Hello, $username</h1>
+            
+            <div class=\"card shadow\">
+                
+                <h3>Account Details:<h3>
+                <h5>Username: $username</h5>
+                <h5>Email: $email</h5>
+                <h5>Date Created: $createtime</h5>
+            </div>
+        </div>
+    ";
+
+    echo $info;
+    ?>
 </body>
 </html>
